@@ -428,14 +428,22 @@ const STYLES = `
   }
 `;
 
-if (!customElements.get(CARD_TAG)) {
+function registerCard() {
+  if (customElements.get(CARD_TAG)) return;
   customElements.define(CARD_TAG, SamsungFoodMealPlanCard);
   window.customCards = window.customCards || [];
-  window.customCards.push({
-    type: CARD_TAG,
-    name: "Samsung Food meal plan",
-    description: "This week's meals as a week strip, an agenda, or the next meal today.",
-    preview: true,
-    documentationURL: "https://app.samsungfood.com/meal-plan",
-  });
+  if (!window.customCards.some((c) => c.type === CARD_TAG)) {
+    window.customCards.push({
+      type: CARD_TAG,
+      name: "Samsung Food meal plan",
+      description: "This week's meals as a week strip, an agenda, or the next meal today.",
+      preview: true,
+      documentationURL: "https://app.samsungfood.com/meal-plan",
+    });
+  }
 }
+
+// The integration loads this file early, before the HA frontend swaps in its own
+// custom element registry. Anything defined before that swap is invisible to
+// dashboards, so wait for the app element (defined after the swap) and register then.
+customElements.whenDefined("home-assistant").then(registerCard);

@@ -81,6 +81,8 @@ HARNESS = """<!doctype html><html><head><meta charset="utf-8"><style>
   customElements.define('ha-icon', class extends HTMLElement {
     connectedCallback() { Object.assign(this.style, { display: 'inline-block', width: 'var(--mdc-icon-size, 24px)',
       height: 'var(--mdc-icon-size, 24px)', borderRadius: '50%', background: 'currentColor', opacity: '.35' }); } });
+  // The card registers itself once the HA app element is defined.
+  customElements.define('home-assistant', class extends HTMLElement {});
 </script></head><body><div class="stack" id="root"></div></body></html>"""
 
 
