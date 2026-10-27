@@ -1,0 +1,29 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sign in to Samsung Food",
+        "description": "Use the email and password for your Samsung Food account. If you normally sign in with an email link, set a password in the Samsung Food app first.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Sign in to Samsung Food again",
+        "description": "Samsung Food rejected the saved password for {email}. Enter the current password.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Samsung Food rejected that email or password.",
+      "cannot_connect": "Couldn't reach Samsung Food. Check the logs for details."
+    },
+    "abort": {
+      "already_configured": "This Samsung Food account is already set up.",
+      "reauth_successful": "Signed in again."
+    }
+  }
+}

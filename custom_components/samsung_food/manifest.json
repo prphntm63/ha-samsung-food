@@ -1,0 +1,13 @@
+{
+  "domain": "samsung_food",
+  "name": "Samsung Food",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["http"],
+  "after_dependencies": ["frontend"],
+  "documentation": "https://github.com/",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "version": "0.2.0"
+}
