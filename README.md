@@ -105,8 +105,7 @@ cards:
 - **Quantities:** they show as the to-do item's description, e.g. "2 l". The description can't be edited from Home Assistant.
 - **Meal plan scope:** it reads your own meal plan. Shared or template plans aren't covered.
 - **New lists** show up automatically within 5 minutes. A deleted list's entity becomes unavailable and can be removed.
-
-The reverse-engineered API details are in [docs/api-notes.md](docs/api-notes.md).
+- Yes, this was mostly vibe coded with Claude.
 
 ## Tests
 
